@@ -1,0 +1,1617 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.cdnfonts.com/css/hero-4');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    font-family: 'Courgette', cursive;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    width: 15px;
+    transition: all 2s ease;
+}
+
+body::-webkit-scrollbar-track{
+    background: rgba(47, 6, 40, 0.239);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: rgb(175, 103, 156);
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: rgb(195, 101, 170);
+}
+
+.gran-contenedor{
+    position: relative;
+    z-index: 3;
+}
+.secciones{
+    width: 100vw;
+}
+
+.seccion-saludo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: rgb(244, 223, 218);
+    overflow: hidden;
+}
+
+.texto-saludo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3em;
+    margin: 0 1em;
+    z-index: 4;
+    top: 110px;
+    transition: all 1.5s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.texto-saludo-activado{
+    top: 0px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.texto-saludo-deco1,
+.texto-saludo-deco2{
+    width: 10%;
+    height: 40%;
+    position: absolute;
+    transition: all 1.5s ease-in-out;
+}
+
+.texto-saludo-deco-activado{
+    width: 50%;
+    height: 60%;
+}
+
+.texto-saludo-deco1{
+    top: -.6em;
+    border-top: 2px solid rgb(58, 31, 17);
+    right: -.6em;
+    border-right: 2px solid rgb(58, 31, 17);
+    
+}
+
+.texto-saludo-deco2{
+    bottom: -.6em;
+    border-bottom: 2px solid rgb(58, 31, 17);
+    left: -.6em;
+    border-left: 2px solid rgb(58, 31, 17);
+}
+
+.decoracion-saludo-1{
+    position: absolute;
+    background-image: url(imagenes/bordes-mobil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 256px;
+    width: 160px;
+    right: 0;
+    bottom: 0;
+    margin-right: .2em;
+    transform-origin: center bottom;
+    animation:  4s ease forwards;
+}
+
+@keyframes seccion-saludo-deco-animacion-borde{
+    0%{
+        transform: translateY(0px) scale(.1);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-20px) scale(1);
+        opacity: 1;
+    }
+}
+
+.decoracion-saludo-2{
+    position: absolute;
+    background-image: url(imagenes/bordes-mobil.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 256px;
+    width: 160px;
+    left: 0;
+    top: 0;
+    margin-left: .2em;
+    transform: rotate(180deg);
+}
+
+
+.decoracion-saludo-3{
+    position: absolute;
+    background-image: url(imagenes/corazon-deco.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    right: 40px;
+    top: 40px;
+    transform: rotate(25deg);
+    filter: hue-rotate(260deg);
+}
+
+.decoracion-saludo-4{
+    position: absolute;
+    background-image: url(imagenes/corazon-deco.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    left: 40px;
+    bottom: 40px;
+    transform: rotate(345deg);
+}
+
+.decoracion-saludo-5{
+    position: absolute;
+    background-image: url(imagenes/rosa.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    left: 290px;
+    bottom: 200px;
+    animation:  3s ease-in-out forwards;
+    transition: all 3s ease-out;
+}
+
+.decoracion-saludo-6{
+    position: absolute;
+    background-image: url(imagenes/rosa.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    right: 290px;
+    top: 200px;
+    animation:  3s ease-in-out forwards;
+    transition: all 3s ease-out;
+}
+
+@keyframes animacion-decoracion-saludo{
+    0%{
+        transform: rotate(360deg);
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.decoracion-saludo-fondo{
+    position: absolute;
+    background-image: url(imagenes/fondo-deco.png);
+    background-position: center;
+    width: 410px;
+    height: 496px;
+    z-index: 1;
+    opacity: .5;
+    transform-origin: center;
+    transform: scale(.8);
+}
+
+
+.seccion-gracias{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: rgb(242, 236, 183);
+}
+
+.contenedor-textos-seccion-gracias{
+    position: absolute;
+    top: 30px;
+    margin-top: 4em;
+    z-index: 4;
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.contenedor-textos-seccion-gracias-activado{
+    top: 0px;
+    opacity: 1;
+}
+
+.texto-gracias{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1.8em;
+    margin: 0 1em;
+    z-index: 4;
+}
+
+.parrafo-gracias{
+    font-size: 1.3em;
+    padding: 1em;
+}
+
+
+.seccion-gracias-imagen1{
+    position: absolute;
+    width: 150px;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 0em;
+    bottom: 6em;
+    border-radius: 1em;
+    transition: all 1.5s ease-out;
+    opacity: 0;
+}
+
+.seccion-gracias-imagen1-activado{
+    left: 1.8em;
+    opacity: 1;
+}
+
+.seccion-gracias-imagen2{
+    position: absolute;
+    width: 150px;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.4);
+    right: 0em;
+    bottom: 10em;
+    border-radius: 1em;
+    transition: all 1.5s ease-out;
+    opacity: 0;
+}
+
+.seccion-gracias-imagen2-activado{
+    right: 2em;
+    opacity: 1;
+}
+
+
+
+.decoracion-gracias-1{
+    position: absolute;
+    background-image: url(imagenes/flor\ borde.png);
+    background-position: center;
+    width: 128px;
+    height: 128px;
+    top: 3px;
+    left: 10px;
+}
+
+.decoracion-gracias-2{
+    position: absolute;
+    background-image: url(imagenes/flor\ borde.png);
+    background-position: center;
+    width: 128px;
+    height: 128px;
+    bottom: 3px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+
+.decoracion-gracias-3{
+    position: absolute;
+    background-image: url(imagenes/ramas.png);
+    background-position: center;
+    width: 64px;
+    height: 64px;
+    bottom: 9px;
+    left: 5px;
+}
+
+.decoracion-gracias-4{
+    position: absolute;
+    background-image: url(imagenes/ramas.png);
+    background-position: center;
+    width: 64px;
+    height: 64px;
+    top: 9px;
+    right: 5px;
+    transform: rotate(180deg);
+}
+
+.decoracion-gracias-fondo-1{
+    position: absolute;
+    background-image: url(imagenes/fondo-deco-2.png);
+    background-position: center;
+    width: 280px;
+    height: 214px;
+    top: 6em;
+    left: 0px;
+    opacity: .3;
+    z-index: 1;
+}
+
+.decoracion-gracias-fondo-2{
+    position: absolute;
+    background-image: url(imagenes/fondo-deco-2.png);
+    background-position: center;
+    width: 280px;
+    height: 214px;
+    bottom: 6em;
+    right: 0px;
+    opacity: .3;
+    z-index: 1;
+    filter: hue-rotate(180deg);
+}
+
+
+.seccion-mensaje{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(244, 223, 218);
+    overflow: hidden;
+}
+
+.parrafo-mensaje{
+    position: absolute;
+    font-size: 1.5em;
+    padding-left: 1em;
+    padding-right: 7em;
+    left: 0px;
+    top: 4em;
+    opacity: 0;
+    transition: all 1.5s ease-out;
+}
+
+.parrafo-mensaje-activado{
+    opacity: 1;
+}
+
+.seccion-mensaje-imagen1,
+.seccion-mensaje-imagen2,
+.seccion-mensaje-imagen3{
+    opacity: 0;
+    transition: all 1.5s ease-in;
+    width: 120px;
+    height: 120px;
+}
+
+
+.seccion-mensaje-imagen1{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    right: 2em;
+    bottom: 16em;
+    border-radius: 1em;
+}
+
+.seccion-mensaje-imagen2{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    right: 1em;
+    bottom: 28em;
+    border-radius: 1em;
+}
+
+.seccion-mensaje-imagen3{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    right: 3em;
+    bottom: 4em;
+    border-radius: 1em;
+}
+
+
+.imagenes-mensaje-activado{
+    opacity: 1;
+}
+
+
+.decoracion-mensaje-1{
+    position: absolute;
+    background-image: url(imagenes/flor-borde-mensaje.png);
+    background-position: center;
+    width: 128px;
+    height: 128px;
+    right: 0px;
+    top: 0px;
+    transform: rotateY(180deg);
+}
+
+.decoracion-mensaje-2{
+    position: absolute;
+    background-image: url(imagenes/flor-borde-mensaje.png);
+    background-position: center;
+    width: 128px;
+    height: 128px;
+    left: 0px;
+    bottom: 0px;
+    transform: rotate(270deg);
+}
+
+.decoracion-mensaje-3{
+    position: absolute;
+    background-image: url(imagenes/maceta.png);
+    background-position: center;
+    width: 128px;
+    height: 128px;
+    right: 13em;
+    bottom: 3em;
+    transform-origin: center top;
+    animation:  5s ease forwards;
+}
+
+@keyframes animacion-mensaje-1{
+    0%{
+        transform: rotate(30deg);
+    }
+
+    20%{
+        transform: rotate(-20deg);
+    }
+
+    40%{
+        transform: rotate(10deg);
+    }
+
+    60%{
+        transform: rotate(-5deg);
+    }
+
+    80%{
+        transform: rotate(2deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+.decoracion-mensaje-4{
+    position: absolute;
+    background-image: url(imagenes/maceta.png);
+    background-position: center;
+    width: 128px;
+    height: 128px;
+    right: 2em;
+    top: 4em;
+    transform-origin: center top;
+    animation:  5s ease forwards;
+}
+
+@keyframes animacion-mensaje-2{
+    0%{
+        transform: rotate(-30deg);
+    }
+
+    20%{
+        transform: rotate(20deg);
+    }
+
+    40%{
+        transform: rotate(-10deg);
+    }
+
+    60%{
+        transform: rotate(5deg);
+    }
+
+    80%{
+        transform: rotate(-2deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+.decoracion-mensaje-fondo-1{
+    position: absolute;
+    background-image: url(imagenes/fondo-deco-3.png);
+    background-position: center;
+    width: 540px;
+    height: 332px;
+    opacity: .2;
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+
+
+.seccion-final{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: rgb(155, 222, 227);
+    overflow-y: hidden;
+}
+
+.contenedor-final{
+    position: relative;
+    background-image: url(imagenes/marco-peque.png);
+    background-position-x: 5px;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: scale();
+}
+
+.contenido-final{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    left: -30px;
+    top: 70px;
+}
+
+
+.seccion-final-corazon{
+    background-image: url(imagenes/corazon-final-peque.png);
+    background-position: center;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    transition: all .5s linear;
+    animation: deco-corazon-final 20s ease-in infinite;
+}
+
+.texto-final{
+    padding: 2em 4em;
+    padding-top: 1em;
+    font-size: 1.2em;
+}
+
+
+.decoracion-final-1{
+    position: absolute;
+    background-image: url(imagenes/corazon-deco-final.png);
+    width: 64px;
+    height: 64px;
+    left: 30px;
+    top: 50px;
+    transform-origin: center;
+    animation:  2s ease;
+}
+
+@keyframes animacion-seccion-final1{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.decoracion-final-2{
+    position: absolute;
+    background-image: url(imagenes/corazon-deco-final.png);
+    width: 64px;
+    height: 64px;
+    right: 30px;
+    bottom: 50px;
+    animation:  2s ease;
+}
+
+@keyframes animacion-seccion-final2{
+    0%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.decoracion-final-3{
+    position: absolute;
+    background-image: url(imagenes/corazon-deco.png);
+    width: 64px;
+    height: 64px;
+    right: 30px;
+    top: 110px;
+}
+
+.decoracion-final-4{
+    position: absolute;
+    background-image: url(imagenes/corazon-deco.png);
+    width: 64px;
+    height: 64px;
+    left: 30px;
+    bottom: 110px;
+}
+
+.decoracion-final-suelo-1{
+    position: absolute;
+    background-image: url(imagenes/seccion-final-suelo1.png);
+    width: 64px;
+    height: 60px;
+    left: 25px;
+    bottom: 0px;
+    filter: hue-rotate(90deg);
+}
+
+.decoracion-final-suelo-2{
+    position: absolute;
+    background-image: url(imagenes/seccion-final-suelo2.png);
+    width: 64px;
+    height: 60px;
+    left: 100px;
+    bottom: 0px;
+    animation-delay: .2s;
+}
+
+.decoracion-final-suelo-3{
+    position: absolute;
+    background-image: url(imagenes/seccion-final-suelo1.png);
+    width: 64px;
+    height: 60px;
+    left: 180px;
+    bottom: 0px;
+}
+
+.decoracion-final-suelo-4{
+    position: absolute;
+    background-image: url(imagenes/seccion-final-suelo2.png);
+    width: 64px;
+    height: 60px;
+    left: 260px;
+    bottom: 0px;
+    filter: hue-rotate(180deg);
+}
+
+.suelo-estilos{
+    transform-origin: center bottom;
+    animation:  2.5s ease forwards;
+    bottom: -20px;
+    opacity: 0;
+}
+
+@keyframes seccion-final-suelo-animacion{
+    0%{
+        transform: translateY(0px) scale(.1);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-20px) scale(1);
+        opacity: 1;
+    }
+}
+
+.decoracion-final-suelo-2{
+    animation-delay: .5s;
+}
+
+.decoracion-final-suelo-4{
+    animation-delay: .8s;
+}
+
+
+.decoracion-final-cesped{
+    position: absolute;
+    background-image: url(imagenes/cesped.png);
+    width: 100vw;
+    height: 32px;
+    left: 0px;
+    bottom: -2px;
+    z-index: 1;
+}
+
+
+.decoracion-final-fondo-1{
+    position: absolute;
+    background-image: url(imagenes/fondo-deco-2.png);
+    background-position: center;
+    width: 280px;
+    height: 214px;
+    left: 50px;
+    top: 100px;
+    opacity: .4;
+    z-index: 1;
+}
+
+.decoracion-final-fondo-2{
+    position: absolute;
+    background-image: url(imagenes/fondo-deco-2.png);
+    background-position: center;
+    width: 280px;
+    height: 214px;
+    right: 50px;
+    bottom: 100px;
+    opacity: .4;
+    z-index: 1;
+    filter: hue-rotate(40deg);
+}
+
+
+@keyframes deco-corazon-final{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+
+    20%{
+        filter: hue-rotate(228deg);
+    }
+
+    40%{
+        filter: hue-rotate(333deg);
+    }
+
+    60%{
+        filter: hue-rotate(121deg);
+    }
+
+    80%{
+        filter: hue-rotate(281deg);
+    }
+
+    100%{
+        filter: hue-rotate(31deg);
+    }
+}
+
+
+.luciernagas{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px rgb(245, 145, 5), 0px 0px 15px rgb(243, 229, 32), 
+    0px 0px 15px rgb(243, 229, 32);
+    animation: 8s linear infinite;
+}
+
+.luciernaga-1{
+    bottom: 30px;
+    left: 10px;
+    animation-name: luciernaga-1;
+    opacity: 0;
+}
+
+@keyframes luciernaga-1 {
+    0%{
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(200px);
+        opacity: 0;
+    }
+}
+
+
+
+.luciernaga-2{
+    bottom: 20px;
+    right: 10px;
+    animation-name: luciernaga-2;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+@keyframes luciernaga-2 {
+    0%{
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(-200px);
+        opacity: 0;
+    }
+}
+
+.luciernaga-3{
+    bottom: 10px;
+    left: 150px;
+    animation-name: luciernaga-3;
+    animation-delay: 6s;
+    opacity: 0;
+}
+
+@keyframes luciernaga-3 {
+    0%{
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(200px);
+        opacity: 0;
+    }
+}
+
+
+.luciernaga-4{
+    bottom: 40px;
+    right: 400px;
+    animation-name: luciernaga-4;
+    opacity: 0;
+}
+
+@keyframes luciernaga-4 {
+    0%{
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translate(-200px);
+        opacity: 0;
+    }
+}
+
+
+.imagenes{
+    border: 4px solid rgb(255, 254, 254);
+}
+
+
+.cont-author{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    margin-left: 10px;
+}
+
+.author{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Hero', sans-serif;
+    font-weight: 600;
+}
+
+.author:hover{
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.github-icon{
+    margin-left: 5px;
+}
+
+
+@media (max-width: 719px){
+
+
+    .parrafo-gracias{
+        font-size: 1.1em;
+    }
+
+    .seccion-gracias-imagen1,
+    .seccion-gracias-imagen2{
+        width: 120px;
+        height: 160px;
+    }
+
+    .seccion-gracias-imagen1{
+        bottom: 5em;
+    }
+
+    .seccion-gracias-imagen2{
+        bottom: 7em;
+    }
+
+
+    .parrafo-mensaje{
+        top: 2.3em;
+        font-size: 1.3em;
+        padding-right: 8em;
+    }
+
+    .seccion-mensaje-imagen1,
+    .seccion-mensaje-imagen2,
+    .seccion-mensaje-imagen3{
+        width: 120px;
+        height: 120px;
+    }
+
+    .seccion-mensaje-imagen1{
+        right: 1em;
+        bottom: 23em;
+    }
+
+    .seccion-mensaje-imagen2{
+        right: 2em;
+        bottom: 13em;
+    }
+
+    .seccion-mensaje-imagen3{
+        right: 3em;
+        bottom: 3em;
+    }
+
+    .decoracion-mensaje-3{
+        right: 12em;
+    }
+
+    .decoracion-mensaje-4{
+        top: 1.6em;
+        z-index: 1;
+    }
+
+    .imagenes{
+        background-position: center;
+        background-size: cover;
+    }
+
+    .author{
+        font-size: 14px;
+    }
+
+    .github-icon{
+        transform: scale(.9);
+    }
+
+}
+
+
+@media (min-width: 720px) and (max-width:1299px){
+
+    .texto-saludo{
+        font-size: 3.2em;
+    }
+
+
+    .contenedor-textos-seccion-gracias{
+        margin-top: 6em;
+    }
+
+    .texto-gracias{
+        font-size: 2.9em;
+        
+    }
+
+    .parrafo-gracias{
+        font-size: 2.4em;
+    }
+
+
+    .seccion-gracias-imagen1,
+    .seccion-gracias-imagen2{
+        width: 270px;
+        height: 350px;
+    }
+
+    .seccion-gracias-imagen1{
+        bottom: 8em;
+    }
+
+    .seccion-gracias-imagen2{
+        bottom: 12em;
+    }
+
+
+
+    .parrafo-mensaje{
+        top: 3em;
+        font-size: 2.5em;
+        padding-right: 10em;
+    }
+
+    .seccion-mensaje-imagen1,
+    .seccion-mensaje-imagen2,
+    .seccion-mensaje-imagen3{
+        width: 200px;
+        height: 200px;
+    }
+
+    .seccion-mensaje-imagen1{
+        right: 3em;
+        bottom: 51em;
+    }
+
+    .seccion-mensaje-imagen2{
+        right: 4em;
+        bottom: 30em;
+    }
+
+    .seccion-mensaje-imagen3{
+        right: 5em;
+        bottom: 9em;
+    }
+
+    .decoracion-mensaje-3{
+        right: 30em;
+        bottom: 4em;
+    }
+
+    .decoracion-mensaje-4{
+        right: 6em;
+        top: 3em;
+        opacity: 1;
+    }
+
+
+    .contenedor-final{
+        background-image: url(imagenes/marco-grande.png);
+        width: 512px;
+        height: 512px;
+    }
+
+    .seccion-final-corazon{
+        background-image: url(imagenes/corazon-final.png);
+        width: 128px;
+        height: 128px;
+    }
+
+    .texto-final{
+        font-size: 1.6em;
+    }
+
+
+    .decoracion-final-suelo-2{
+        left: 230px;
+    }
+
+    .decoracion-final-suelo-3{
+        left: 400px;
+    }
+    
+    .decoracion-final-suelo-4{
+        left: 540px;
+    }
+
+
+    .luciernaga-4{
+        right: 180px;
+    }
+
+    .author{
+        font-size: 18px;
+    }
+
+    .github-icon{
+        transform: scale(1.2);
+    }
+
+    
+}
+
+
+
+@media  (min-width: 1300px) and (max-width: 1919px){
+    
+    .decoracion-saludo-5,
+    .decoracion-saludo-6{
+        opacity: 0;
+    }
+
+    .contenedor-textos-seccion-gracias{
+        margin-top: 4em;
+    }
+
+    .texto-gracias{
+        font-size: 2.6em;
+    }
+
+    .parrafo-gracias{
+        padding: 1.2em;
+        font-size: 1.8em;
+    }
+
+    .seccion-gracias-imagen1,
+    .seccion-gracias-imagen2{
+        width: 330px;
+        height: 240px;
+    }
+
+    .seccion-gracias-imagen1{
+        bottom: 3em;
+    }
+    
+    .seccion-gracias-imagen2{
+        bottom: 5em;
+    }
+
+    .seccion-gracias-imagen1-activado{
+        left: 6em;
+    }
+    .seccion-gracias-imagen2-activado{
+        right: 6em;
+    }
+
+    .parrafo-mensaje{
+        padding-right: 22em;
+        top: 3em;
+        width: 1000px;
+        font-size: 1.8em;
+    }
+
+
+    .seccion-mensaje-imagen1,
+    .seccion-mensaje-imagen2,
+    .seccion-mensaje-imagen3{
+        width: 250px;
+        height: 280px;
+        border-radius: 30px;
+    }
+
+    .seccion-mensaje-imagen1{
+        left: 30em;
+        bottom: 21em;
+    }
+
+    .seccion-mensaje-imagen2{
+        right: 5em;
+        bottom: 21em;
+    }
+
+    .seccion-mensaje-imagen3{
+        right: 22em;
+        bottom: 2em;
+    }
+
+    .decoracion-mensaje-3{
+        right: 60em;
+    }
+    
+    .decoracion-mensaje-4{
+        right: 23em;
+        top: 2em;
+    }
+
+
+    .contenedor-final{
+        background-image: url(imagenes/marco-grande.png);
+        width: 512px;
+        height: 512px;
+        animation: rotacion-final 5s ease;
+    }
+
+    @keyframes rotacion-final{
+        0%{
+            background-position: 0deg;
+        }
+
+        100%{
+            background-position: 360deg;
+        }
+    }
+
+    .seccion-final-corazon{
+        background-image: url(imagenes/corazon-final.png);
+        width: 128px;
+        height: 128px;
+    }
+
+    .texto-final{
+        font-size: 1.6em;
+    }
+
+
+    .decoracion-final-suelo-1{
+        left: 200px;
+    }
+
+    .decoracion-final-suelo-2{
+        left: 400px;
+    }
+    
+    .decoracion-final-suelo-3{
+        left: 650px;
+    }
+
+    .decoracion-final-suelo-4{
+        left: 1000px;
+    }
+
+
+    @keyframes luciernaga-1 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(400px);
+            opacity: 0;
+        }
+    }
+    
+    
+    @keyframes luciernaga-2 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(-400px);
+            opacity: 0;
+        }
+    }
+    
+    .luciernaga-3{
+        bottom: 10px;
+        left: 350px;
+        animation-name: luciernaga-3;
+        animation-delay: 6s;
+        opacity: 0;
+    }
+    
+    
+    @keyframes luciernaga-3 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(400px);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes luciernaga-4 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(-400px);
+            opacity: 0;
+        }
+    }
+}
+
+
+
+@media (min-width: 1920px){
+
+    .texto-saludo{
+        font-size: 5em;
+    }
+
+    .decoracion-saludo-1,
+    .decoracion-saludo-2{
+        background-image: url(imagenes/grandes/bordes-mobil.png);
+        width: 300px;
+        height: 512px;
+    }
+
+    .decoracion-saludo-3,
+    .decoracion-saludo-4{
+        background-image: url(imagenes/grandes/corazon-deco.png);
+        width: 128px;
+        height: 128px;
+    }
+    
+    .decoracion-saludo-5,
+    .decoracion-saludo-6{
+        background-image: url(imagenes/grandes/rosa.png);
+        width: 256px;
+        height: 256px;
+        opacity: 0;
+    }
+
+    .decoracion-saludo-fondo{
+        transform: scale(2);
+    }
+
+    .contenedor-textos-seccion-gracias{
+        margin-top: 7em;
+    }
+
+    .texto-gracias{
+        font-size: 5em;
+    }
+
+    .parrafo-gracias{
+        padding: 1.2em;
+        font-size: 3em;
+    }
+
+    .seccion-gracias-imagen1,
+    .seccion-gracias-imagen2{
+        width: 530px;
+        height: 440px;
+    }
+
+
+    .decoracion-gracias-1,
+    .decoracion-gracias-2{
+        background-image: url(imagenes/grandes/flor\ borde.png);
+        width: 256px;
+        height: 256px;
+    }
+
+    .seccion-gracias-imagen1{
+        bottom: 3em;
+    }
+    
+    .seccion-gracias-imagen2{
+        bottom: 5em;
+    }
+
+    .seccion-gracias-imagen1-activado{
+        left: 8em;
+    }
+    .seccion-gracias-imagen2-activado{
+        right: 8em;
+    }
+
+    .parrafo-mensaje{
+        padding-right: 10em;
+        top: 2em;
+        width: 1000px;
+        font-size: 3em;
+    }
+
+
+    .seccion-mensaje-imagen1,
+    .seccion-mensaje-imagen2,
+    .seccion-mensaje-imagen3{
+        width: 360px;
+        height: 380px;
+        border-radius: 30px;
+    }
+
+    .seccion-mensaje-imagen1{
+        left: 50em;
+        bottom: 35em;
+    }
+
+    .seccion-mensaje-imagen2{
+        right: 5em;
+        bottom: 30em;
+    }
+
+    .seccion-mensaje-imagen3{
+        right: 28em;
+        bottom: 2em;
+    }
+
+    .decoracion-mensaje-1,
+    .decoracion-mensaje-2{
+        background-image: url(imagenes/grandes/flor-borde-mensaje.png);
+        width: 256px;
+        height: 256px;
+    }
+
+    .decoracion-mensaje-3,
+    .decoracion-mensaje-4{
+        background-image: url(imagenes/grandes/maceta.png);
+        width: 256px;
+        height: 256px;
+    }
+
+    .decoracion-mensaje-3{
+        right: 60em;
+    }
+    
+    .decoracion-mensaje-4{
+        right: 23em;
+        top: 2em;
+    }
+
+
+    .contenedor-final{
+        background-image: url(imagenes/grandes/marco-grande.png);
+        width: 820px;
+        height: 820px;
+    }
+
+    .contenido-final{
+        left: -65px;
+        top: 80px;
+    }
+    
+
+    .seccion-final-corazon{
+        background-image: url(imagenes/grandes/corazon-final.png);
+        width: 256px;
+        height: 256px;
+    }
+
+    .texto-final{
+        font-size: 2.5em;
+    }
+
+    .decoracion-final-1,
+    .decoracion-final-2{
+        background-image: url(imagenes/grandes/corazon-deco-final.png);
+        width: 128px;
+        height: 128px;
+    }
+
+
+    .decoracion-final-3,
+    .decoracion-final-4{
+        background-image: url(imagenes/grandes/corazon-deco.png);
+        width: 128px;
+        height: 128px;
+    }
+
+    .decoracion-final-3{
+        right: 120px;
+        top: 200px;
+    }
+
+    .decoracion-final-4{
+        left: 120px;
+        bottom: 200px;
+    }
+
+    .decoracion-final-suelo-1,
+    .decoracion-final-suelo-3{
+        background-image: url(imagenes/grandes/seccion-final-suelo1.png);
+        width: 128px;
+        height: 128px;
+    }
+
+    .decoracion-final-suelo-2,
+    .decoracion-final-suelo-4{
+        background-image: url(imagenes/grandes/seccion-final-suelo2.png);
+        width: 128px;
+        height: 128px;
+    }
+
+    
+
+    .decoracion-final-suelo-1{
+        left: 200px;
+    }
+
+    .decoracion-final-suelo-2{
+        left: 600px;
+    }
+    
+    .decoracion-final-suelo-3{
+        left: 950px;
+    }
+
+    .decoracion-final-suelo-4{
+        left: 1400px;
+    }
+
+    .luciernagas{
+        width: 15px;
+        height: 15px;
+    }
+
+
+    @keyframes luciernaga-1 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(400px);
+            opacity: 0;
+        }
+    }
+    
+    
+    @keyframes luciernaga-2 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(-400px);
+            opacity: 0;
+        }
+    }
+    
+    .luciernaga-3{
+        bottom: 10px;
+        left: 350px;
+        animation-name: luciernaga-3;
+        animation-delay: 6s;
+        opacity: 0;
+    }
+    
+    
+    @keyframes luciernaga-3 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(400px);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes luciernaga-4 {
+        0%{
+            opacity: 0;
+        }
+    
+        10%{
+            opacity: 1;
+        }
+    
+        100%{
+            transform: translate(-400px);
+            opacity: 0;
+        }
+    }
+
+    .cont-author{
+        margin-bottom: 5px;
+    }
+
+    .author{
+        font-size: 22px;
+    }
+
+    .github-icon{
+        transform: scale(1.2);
+    }
+
+}
