@@ -7,3 +7,7 @@
 -Diseño agradable.
 
 Puede ver la demostracion con github-pages.
+
+<div id="header" align="center">
+	<img src="./imagenes/pagina-para-una-madre-prueba.png">
+</div>
